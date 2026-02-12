@@ -1,7 +1,7 @@
 ## Task Outputs
 
 ### Task 1
-![Task 1](Output\Task-1.png)
+![Task 1](./Output/Task-1.png)
 
 ### Task 2
 ![Task 2](Output\Task-2.png)
