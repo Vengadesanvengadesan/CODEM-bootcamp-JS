@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Task 2</title>
+  <title>Task 2 Movie Ticket</title>
   
  
 </head>
@@ -22,7 +22,7 @@
         let entry_status = "";
 
         try {
-            //  Nested Logic for Ages 13-17
+          
             if (user_age >= 13 && user_age <= 17) {
                 if (has_permission === true) {
                     entry_status = "Allowed (Guardian Permission Verified)";
@@ -30,17 +30,17 @@
                     entry_status = "Not Allowed (Missing Permission)";
                 }
             } 
-            //  Default Logic for Children and Adults
+            
             else {
                 entry_status = "Allowed";
             }
 
-            //  Displaying the result
+            // Its display the output in the web browers
             document.getElementById("display_box").innerText = `Status: ${entry_status}`;
 
         } catch (error) {
             
-            console.error("System Validation Error:", error.message);
+            console.error(`System Validation Error: ${error.message}`);
         } finally {
             
             console.log(`program end.....`);

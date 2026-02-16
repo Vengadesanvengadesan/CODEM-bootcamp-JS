@@ -17,7 +17,7 @@
         
         function detectIntent(message) {
             try {
-                //  Check for undefined, null, or empty/spaces
+                
                 if (!message || message.trim() === "") {
                     console.log("Status: Invalid message detected.");
                     return;
@@ -48,7 +48,7 @@
                     detected_intent = "Other";
                 }
 
-                // 4. Requirement: Log intent and original message
+                //  Requirement: Log intent and original message
                 console.log(`Original Message: "${message}"`);
                 console.log(`Detected Intent: ${detected_intent}`);
                 console.log(`-----------------------------`);

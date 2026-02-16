@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 17 - Travel System</title>
+    <title>Task 7 - Travel System</title>
 </head>
 <body>
     <h3>Travel Eligibility System</h3>
@@ -12,14 +12,11 @@
     <button onclick="checkTravelEligibility(25, 'normal', false)">Adult Normal (No ID)</button>
 
     <script>
-        /**
-         * Task 17: Travel Eligibility & Fare Calculator
-         * Architecture: Input Validation -> Logical Branching -> Output
-         */
+        
         function checkTravelEligibility(age, ticketType, hasID) {
             let base_fare = 200;
 
-            // 1. Validation: Fail Fast logic
+          
             if (age <= 0) {
                 console.error("Status: Invalid age check failed.");
                 return;
@@ -29,12 +26,11 @@
                 console.error("Status: Invalid ticket type detected.");
                 return;
             }
+              //Ternary Operator condition ? true: false;
 
-            // 2. Fare Calculation logic
-            // Add ₹50 if the ticket is priority, regardless of age
             let final_fare = (ticketType === 'priority') ? base_fare + 50 : base_fare;
 
-            // 3. Eligibility Branching
+            //  Eligibility Branching
             let status_msg = "";
 
             if (age >= 18 && hasID) {
@@ -47,7 +43,7 @@
                 status_msg = "Not eligible for travel.";
             }
 
-            // 4. Comprehensive Logging
+            //  Comprehensive Logging
             console.log(`--- Travel Report ---`);
             console.log(`Age Profile    : ${age}`);
             console.log(`Ticket Class   : ${ticketType.toUpperCase()}`);

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 22 - Coin Toss Game</title>
+    <title>Task 4 - Coin Toss Game</title>
     
 </head>
 <body>
@@ -16,8 +16,9 @@
     
         function playCoinToss(userSelection) {
             try {
-                //  Computer Move
+                //  Computer Move in randomly
                 let coinFlip = Math.random();
+                  //Ternary Operator condition ? true: false;
                 let systemMove = (coinFlip > 0.5) ? 'Heads' : 'Tails';
 
                 //  Result
@@ -28,7 +29,7 @@
                     gameResult = "Player Loses ❌";
                 }
 
-                //  Display as per Requirements
+                
                 alert(
                     `${gameResult}\n` +
                     `------------------\n` +
@@ -37,7 +38,7 @@
                 );
 
             } catch (error) {
-                console.error("Game Execution Error:", error.message);
+                console.error(`Game Execution Error:${ error.message}`);
             } finally {
                 console.log("Program end...");
             }

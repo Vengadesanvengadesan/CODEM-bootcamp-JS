@@ -15,16 +15,12 @@
     <button onclick="processNotification('', false)">Empty Alert</button>
 
     <script>
-        /**
-         * Task 14: Notification Filter
-         * Logic: Classifies based on urgency flag and content presence
-         */
+       
         function processNotification(msg_content, is_urgent) {
             let notification_type = "";
             let display_message = "";
 
-            // 1. Classification Logic
-            // If it's urgent OR it's a critical system message (content exists)
+           
             if (is_urgent === true && msg_content.length > 0) {
                 notification_type = "IMPORTANT";
                 display_message = `[PRIORITY] ${msg_content.toUpperCase()}`;
@@ -38,10 +34,10 @@
                 display_message = "No new notifications.";
             }
 
-            // 2. Display formatted message using alert
+            // 2. Display formatted message using alert . \n next line
             alert(`${notification_type} NOTIFICATION\n------------------\n${display_message}`);
             
-            // Console log for debugging (helpful for mentors to see)
+            //This is used to dispaly better understanding in console
             console.log(`Log: Type=${notification_type} | Content="${msg_content}"`);
         }
     </script>

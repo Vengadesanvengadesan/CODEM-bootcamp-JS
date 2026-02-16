@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task 21 - Order Management</title>
+    <title>Task 3 - Order Management</title>
 </head>
 <body>
 
@@ -27,12 +27,12 @@
                     order_status = "Order Delayed (Out of Stock)";
                 }
 
-                // Display result as per requirements
+                // Display result as per requirements in alert format
                 alert(order_status);
 
             } catch (error) {
                
-                console.error("Order Processing Error:", error.message);
+                console.error(`Order Processing Error:${ error.message}`);
             } finally {
                 
                 console.log(`program end....`);

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task 8</title>
+    <title>Task 8 Message Priority Formatter  </title>
 </head>
 <body>
 
@@ -14,7 +14,7 @@
 <script>
 function processMessage(message, isUrgent) {
 
-    // Validation
+
     if (!message) {
         console.log("Message cannot be empty");
         return;
@@ -32,7 +32,6 @@ function processMessage(message, isUrgent) {
         finalMessage = "INFO: " + message.toLowerCase();
     }
 
-    // Display
     console.log("Final Message:", finalMessage);
     console.log("High Priority:", isHighPriority);
 }

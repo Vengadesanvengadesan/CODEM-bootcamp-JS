@@ -15,13 +15,7 @@
     <button onclick="checkAppointment(true, true)">Confirm Appointment</button>
 
     <script>
-        /**
-         * Task 13: Appointment Confirmation System
-         * Logic:
-         * 1. If date_available is false -> Rejected
-         * 2. Else if user_confirmed is false -> Rejected
-         * 3. Else -> Confirmed
-         */
+        
         function checkAppointment(date_available, user_confirmed) {
             let status_msg = "";
 
@@ -35,10 +29,10 @@
                 status_msg = "Appointment Confirmed";
             }
 
-            // Display result using alert as per requirements
+            // Display result using alert
             alert(status_msg);
             
-            // Debugging log for your own reference
+           // This is used to dispaly better understanding in console
             console.log(`System Log: Date[${date_available}] Confirm[${user_confirmed}] -> ${status_msg}`);
         }
     </script>

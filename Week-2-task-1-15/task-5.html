@@ -17,9 +17,9 @@
                 return; // Stop execution if amount is invalid 
             }
 
-            // Helper function to check coupon
+            
             function checkCoupon(code) {
-                // Added .toLowerCase() to handle "Save10" or "save10"
+                // Added .toLowerCase() to  "Save10" or "save10"
                 if (code.toLowerCase() === "save10") {
                     return true;
                 }
@@ -29,7 +29,7 @@
             let hasCoupon = checkCoupon(couponCode);
             let discountPercent = 0;
 
-            // Logic Correction: Fixed variable name typos (ismemeber -> isMember)
+            
             if (amount >= 3500 || isMember) {
                 discountPercent = 20;
             } 

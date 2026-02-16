@@ -15,15 +15,11 @@
     <button onclick="checkPaymentStatus(1500, false, 'Card')">Pending Payment</button>
 
     <script>
-        /**
-         * Task 15: Payment Status Checker
-         * Logic: Validates amount, status, and method for a transaction
-         */
+        
         function checkPaymentStatus(amount, isPaid, paymentMethod) {
             try {
                 let status_result = "";
 
-                // 1. Validation Logic
                 if (amount <= 0 || !amount) {
                     status_result = "Invalid payment amount";
                 } 
@@ -37,8 +33,7 @@
                     status_result = "Invalid payment method";
                 }
 
-                // 2. Requirement: Display Status, Amount, and Method
-                // Using Template Literals for a professional formatted alert
+              
                 alert(
                     `--- Transaction Report ---\n` +
                     `Status: ${status_result}\n` +
@@ -47,7 +42,7 @@
                 );
 
             } catch (error) {
-                // Fixed the variable name here to match the catch parameter
+                
                 console.error("Gateway Error:", error.message);
             }
         }

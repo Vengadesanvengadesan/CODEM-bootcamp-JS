@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 16 - Retail Billing</title>
+    <title>Task 6 - Retail Billing</title>
 </head>
 <body>
     <h3>Store Billing System</h3>
@@ -12,36 +12,33 @@
     <button onclick="calculateBill(0, false)">Error Test</button>
 
     <script>
-        /**
-         * Task 16: Billing Logic with Membership and Discounts
-         * Prepared by: Vengadesan E
-         */
+        
         function calculateBill(billAmount, isMember) {
             let discountPercentage = 0;
 
-            // 1. Validation: Stop if amount is 0 or less
+          
             if (billAmount <= 0) {
                 console.error("Invalid Transaction: Process Stopped.");
                 return;
             }
 
-            // 2. Discount Logic
+            // Discount Logic
             if (isMember) {
-                discountPercentage = 10; // 10% for members
+                discountPercentage = 10; 
             } else if (billAmount >= 1000) {
-                discountPercentage = 5;  // 5% for high-value bills
+                discountPercentage = 5;  
             } else {
                 discountPercentage = 0;
             }
 
-            // 3. Financial Calculations
+            
             let discount_val = (billAmount * discountPercentage) / 100;
             let final_total = billAmount - discount_val;
-            
-            // 4. Gift Logic
+            //Ternary Operator condition ? true: false;
+           
             let gift_awarded = (final_total >= 1500) ? "YES (Free Gift Included!)" : "NO";
 
-            // 5. Requirement: Display all details
+            //  Requirement: Display all details
             console.log(`========== INVOICE SUMMARY ==========`);
             console.log(`Original Bill : ₹${billAmount}`);
             console.log(`Member Status : ${isMember ? "Active" : "Regular"}`);
