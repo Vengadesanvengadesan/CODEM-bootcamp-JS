@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task-10</title>
+</head>
+<body>
+
+    <button onclick="check('123','564', false)">Account Not Blocked</button>
+    <button onclick="check('123','564', true)">Account Blocked</button>
+
+    <script>
+        function check(pass, otp, status) {
+            if (pass === '123' && otp === '564' && status === false) {
+                //additional looks thats why I use emoje
+                
+                alert("Login Success 😄");
+            } else {
+                alert("Login Failed ❌");
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 13 - Appointment System</title>
+</head>
+<body>
+    <h3>Appointment Scheduler</h3>
+    
+    <button onclick="checkAppointment(false, true)">Check Unavailable Date</button>
+    
+    <button onclick="checkAppointment(true, false)">Check Unconfirmed User</button>
+    
+    <button onclick="checkAppointment(true, true)">Confirm Appointment</button>
+
+    <script>
+        /**
+         * Task 13: Appointment Confirmation System
+         * Logic:
+         * 1. If date_available is false -> Rejected
+         * 2. Else if user_confirmed is false -> Rejected
+         * 3. Else -> Confirmed
+         */
+        function checkAppointment(date_available, user_confirmed) {
+            let status_msg = "";
+
+            if (date_available === false) {
+                status_msg = "Appointment Rejected (Date Unavailable)";
+            } 
+            else if (user_confirmed === false) {
+                status_msg = "Appointment Rejected (User Not Confirmed)";
+            } 
+            else {
+                status_msg = "Appointment Confirmed";
+            }
+
+            // Display result using alert as per requirements
+            alert(status_msg);
+            
+            // Debugging log for your own reference
+            console.log(`System Log: Date[${date_available}] Confirm[${user_confirmed}] -> ${status_msg}`);
+        }
+    </script>
+</body>
+</html>

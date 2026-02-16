@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 14 - Notification System</title>
+</head>
+<body>
+    <h3>System Notifications</h3>
+    
+    <button onclick="processNotification('System Reboot Required', true)">Critical Update</button>
+    
+    <button onclick="processNotification('New message received', false)">Standard Message</button>
+    
+    <button onclick="processNotification('', false)">Empty Alert</button>
+
+    <script>
+        /**
+         * Task 14: Notification Filter
+         * Logic: Classifies based on urgency flag and content presence
+         */
+        function processNotification(msg_content, is_urgent) {
+            let notification_type = "";
+            let display_message = "";
+
+            // 1. Classification Logic
+            // If it's urgent OR it's a critical system message (content exists)
+            if (is_urgent === true && msg_content.length > 0) {
+                notification_type = "IMPORTANT";
+                display_message = `[PRIORITY] ${msg_content.toUpperCase()}`;
+            } 
+            else if (msg_content.length > 0) {
+                notification_type = "NORMAL";
+                display_message = `Notice: ${msg_content}`;
+            } 
+            else {
+                notification_type = "NORMAL";
+                display_message = "No new notifications.";
+            }
+
+            // 2. Display formatted message using alert
+            alert(`${notification_type} NOTIFICATION\n------------------\n${display_message}`);
+            
+            // Console log for debugging (helpful for mentors to see)
+            console.log(`Log: Type=${notification_type} | Content="${msg_content}"`);
+        }
+    </script>
+</body>
+</html>
