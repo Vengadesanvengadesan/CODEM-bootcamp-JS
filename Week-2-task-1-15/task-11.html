@@ -12,10 +12,7 @@
     <button onclick="getWeatherAdvice('cloudy', 'medium')">Other Condition</button>
 
     <script>
-        /**
-         * Weather Action Advisor
-         * Logic: Checks condition and temperature to provide safety advice
-         */
+     
         function getWeatherAdvice(condition, intensity) {
             let advice_message;
 
@@ -32,8 +29,7 @@
 
             // Requirements: Display using alert()
             alert(advice_message);
-            
-            // Professional touch: Also logging to console for debugging
+           
             console.log(`Condition: ${condition} | Advice: ${advice_message}`);
         }
     </script>
