@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS | Enhanced Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-wrapper">
+        <div class="blob-bg">
+            <div class="blob one"></div>
+            <div class="blob two"></div>
+            <div class="blob three"></div>
+        </div>
+
+        <aside class="sidebar-3d">
+            <div class="logo">CMS <span style="font-size: 0.5em; opacity: 0.7;">v2.0</span></div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#" onclick="showSection('overview')"><i class="fas fa-th-large"></i>
+                            Overview</a></li>
+                    <li><a href="#" onclick="showSection('registration')"><i class="fas fa-id-badge"></i>
+                            Registration</a></li>
+                    <li><a href="#" onclick="showSection('submissions')"><i class="fas fa-file-alt"></i> Submission
+                            Status</a></li>
+                    <li><a href="#" onclick="showSection('upload')"><i class="fas fa-upload"></i> Submit Paper</a></li>
+                    <li><a href="#" onclick="showSection('reviews')"><i class="fas fa-star"></i> Reviews</a></li>
+                    <li><a href="#" onclick="showSection('schedule')"><i class="fas fa-calendar-alt"></i> Schedule</a>
+                    </li>
+
+                    <li class="nav-separator">Admin Area</li>
+                    <li><a href="#" onclick="showSection('admin')"><i class="fas fa-user-shield"></i> Admin Panel</a>
+                    </li>
+                    <li><a href="#" onclick="showSection('settings')"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content-3d">
+            <header class="navbar-3d">
+                <div class="welcome-text">Welcome, <span>Vengadesan</span></div>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search papers, authors...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="user-profile-icon">
+                    <i class="fas fa-bell"></i>
+                    <div class="avatar"></div>
+                </div>
+            </header>
+
+            <section class="content-grid">
+
+                <div id="overview" class="content-panel active-panel">
+                    <h3 class="panel-title">Dashboard Overview</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <i class="fas fa-file-signature"></i>
+                            <h4>My Papers</h4>
+                            <p>3 Submitted</p>
+                        </div>
+                        <div class="metric-card">
+                            <i class="fas fa-check-double"></i>
+                            <h4>Acceptance Rate</h4>
+                            <p>66%</p>
+                        </div>
+                        <div class="metric-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Next Deadline</h4>
+                            <p>2 Days</p>
+                        </div>
+                        <div class="metric-card">
+                            <i class="fas fa-ticket-alt"></i>
+                            <h4>Ticket Status</h4>
+                            <p style="color: #34d399;">Confirmed</p>
+                        </div>
+                    </div>
+
+                    <div class="overview-split">
+                        <div class="chart-panel">
+                            <h4 class="panel-title">Submission Analytics</h4>
+                            <img src="https://placehold.co/600x250/2c3e50/ffffff?text=Submission+Stats+Graph"
+                                alt="Submission Chart">
+                        </div>
+                        <div class="notifications-panel">
+                            <h4 class="panel-title">Recent Activity</h4>
+                            <ul class="activity-list">
+                                <li class="activity-item">
+                                    <div class="activity-icon"><i class="fas fa-envelope"></i></div>
+                                    <div><strong>Review Received</strong><br><small>Paper ID #101</small></div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="activity-icon warning"><i class="fas fa-exclamation"></i></div>
+                                    <div><strong>System Alert</strong><br><small>Maintenance at 10 PM</small></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="registration" class="content-panel">
+                    <h3 class="panel-title">Conference Registration</h3>
+                    <p class="section-desc">Select your participation type and fill in the details below.</p>
+
+                    <form class="upload-form">
+                        <div class="registration-type-selector">
+                            <label class="radio-card selected" onclick="selectTicket(this)">
+                                <input type="radio" name="ticket" checked>
+                                <i class="fas fa-user-graduate"></i>
+                                <h4>Student</h4>
+                                <p>$50 / Seat</p>
+                            </label>
+                            <label class="radio-card" onclick="selectTicket(this)">
+                                <input type="radio" name="ticket">
+                                <i class="fas fa-briefcase"></i>
+                                <h4>Professional</h4>
+                                <p>$150 / Seat</p>
+                            </label>
+                            <label class="radio-card" onclick="selectTicket(this)">
+                                <input type="radio" name="ticket">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <h4>Academic</h4>
+                                <p>$100 / Seat</p>
+                            </label>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your full name">
+                        </div>
+                        <div class="input-group">
+                            <label>Institution / Organization</label>
+                            <input type="text" placeholder="e.g., GCE Tirunelveli">
+                        </div>
+                        <button type="button" class="btn" onclick="handleRegistration()">Proceed to Payment</button>
+                    </form>
+                </div>
+
+                <div id="submissions" class="content-panel">
+                    <h3 class="panel-title">My Submissions</h3>
+                    <div class="table-container">
+                        <table class="user-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Authors</th>
+                                    <th>Status</th>
+                                    <th>Score</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paperTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="upload" class="content-panel">
+                    <h3 class="panel-title">Submit a New Paper</h3>
+                    <form class="upload-form">
+                        <div class="input-group">
+                            <label for="paperTitle">Paper Title</label>
+                            <input type="text" id="paperTitle" placeholder="e.g., Advances in Quantum Computing">
+                        </div>
+                        <div class="input-group">
+                            <label for="authors">Authors</label>
+                            <input type="text" id="authors" placeholder="Vengadesan, etc.">
+                        </div>
+                        <div class="input-group">
+                            <label for="abstract">Abstract</label>
+                            <textarea id="abstract" rows="5" placeholder="Enter abstract..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="file">Upload File (PDF)</label>
+                            <input type="file" id="file" accept=".pdf">
+                        </div>
+                        <button type="submit" class="btn">Upload Paper</button>
+                    </form>
+                </div>
+
+                <div id="reviews" class="content-panel">
+                    <h3 class="panel-title">Peer Review Status</h3>
+                    <div class="review-status-grid">
+                        <div class="review-card">
+                            <h4>Paper ID: 104 - AI in Health</h4>
+                            <p>Status: <span class="badge badge-success">Accepted</span></p>
+                            <div class="stars">
+                                <p>Relevance: ⭐⭐⭐⭐⭐</p>
+                                <p>Originality: ⭐⭐⭐⭐☆</p>
+                            </div>
+                            <p><strong>Reviewer Comment:</strong> "Excellent work on the neural network implementation."
+                            </p>
+                        </div>
+                        <div class="review-card">
+                            <h4>Paper ID: 109 - Blockchain</h4>
+                            <p>Status: <span class="badge badge-warning">Pending</span></p>
+                            <p>Reviewers Assigned: 2/3</p>
+                            <p>Progress: <progress value="60" max="100"></progress> 60%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="schedule" class="content-panel">
+                    <h3 class="panel-title">Conference Timeline</h3>
+                    <div class="schedule-items">
+                        <div class="schedule-card blue-border">
+                            <h4><i class="fas fa-microphone"></i> Opening Ceremony</h4>
+                            <p>09:00 AM - 10:00 AM | Main Auditorium</p>
+                        </div>
+                        <div class="schedule-card green-border">
+                            <h4><i class="fas fa-laptop-code"></i> Technical Session I (CSE)</h4>
+                            <p>10:30 AM - 12:30 PM | Lab 2</p>
+                        </div>
+                        <div class="schedule-card orange-border">
+                            <h4><i class="fas fa-utensils"></i> Lunch Break</h4>
+                            <p>12:30 PM - 01:30 PM | Cafeteria</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="admin" class="content-panel">
+                    <div class="admin-header">
+                        <h3 class="panel-title">Admin Control Panel</h3>
+                        <button class="btn small dark-btn">Download Report</button>
+                    </div>
+
+                    <div class="admin-grid">
+                        <div class="metric-card gradient-1">
+                            <h4>Total Users</h4>
+                            <h1>1,240</h1>
+                        </div>
+                        <div class="metric-card gradient-2">
+                            <h4>Revenue</h4>
+                            <h1>$45k</h1>
+                        </div>
+                        <div class="metric-card white-card">
+                            <h4 class="dark-text">Papers Pending</h4>
+                            <h1 class="red-text">14</h1>
+                        </div>
+                    </div>
+
+                    <h4 class="sub-title">Recent Registrations</h4>
+                    <table class="user-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Payment</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rahul K.</td>
+                                <td>Student</td>
+                                <td>Completed</td>
+                                <td><span class="badge badge-success">Active</span></td>
+                                <td><i class="fas fa-ellipsis-v"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Anita R.</td>
+                                <td>Professor</td>
+                                <td>Pending</td>
+                                <td><span class="badge badge-warning">Verify</span></td>
+                                <td><button class="btn small">Approve</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="settings" class="content-panel">
+                    <h3 class="panel-title">Account Settings</h3>
+                    <form class="settings-form">
+                        <div class="input-group">
+                            <label>Display Name</label>
+                            <input type="text" value="Vengadesan">
+                        </div>
+                        <div class="input-group">
+                            <label>Email Notification Frequency</label>
+                            <select class="std-select">
+                                <option>Instant</option>
+                                <option>Daily Digest</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Save Changes</button>
+                    </form>
+                </div>
+
+            </section>
+        </main>
+    </div>
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Registration Successful!</h3>
+            <p>Welcome aboard, <span id="modalUserName">Participant</span>.</p>
+            <p class="sub-text">A confirmation email has been sent to you.</p>
+            <button class="btn" onclick="closeModal()">Awesome!</button>
+        </div>
+    </div>
+    <button class="btn" onclick="closeModal()">Awesome!</button>
+    </div>
+    <div id="paperModal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 600px; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+                <h3 id="viewTitle" style="color: #3b82f6; margin-bottom: 5px; padding-right: 20px;">Title</h3>
+                <button onclick="closePaperModal()"
+                    style="background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">&times;</button>
+            </div>
+
+            <p id="viewAuthors" style="font-style: italic; color: #aaa; margin-bottom: 20px; font-size: 0.9rem;">
+                Authors...</p>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <h4 style="font-size: 0.85rem; text-transform: uppercase; color: #888; margin-bottom: 10px;">Abstract
+                </h4>
+                <p id="viewAbstract" style="font-size: 0.95rem; line-height: 1.6; color: #e0e7ff;">
+                    Loading abstract...
+                </p>
+            </div>
+
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                <div>
+                    <span style="font-size: 0.8rem; color: #888;">Current Status:</span>
+                    <span id="viewStatus" class="badge">Unknown</span>
+                </div>
+                <button class="btn small" style="width: auto;" onclick="alert('Downloading PDF...')"><i
+                        class="fas fa-download"></i> Download PDF</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
