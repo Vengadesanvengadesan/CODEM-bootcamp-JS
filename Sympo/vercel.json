@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/Frequenza_26_GCE_Tirunelveli-1.html" },
+    { "source": "/index.html", "destination": "/Frequenza_26_GCE_Tirunelveli-1.html" }
+  ]
+}
