@@ -1,8 +1,8 @@
 {
-  "buildCommand": "echo 'Static site'",
-  "outputDirectory": ".",
+  "buildCommand": "node -e \"const fs=require('fs'); fs.mkdirSync('dist',{recursive:true}); fs.copyFileSync('index.html','dist/index.html'); try{fs.copyFileSync('Frequenza_26_GCE_Tirunelveli-1.html','dist/Frequenza_26_GCE_Tirunelveli-1.html');}catch(e){}\"",
+  "outputDirectory": "dist",
   "framework": null,
   "rewrites": [
-    { "source": "/", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
