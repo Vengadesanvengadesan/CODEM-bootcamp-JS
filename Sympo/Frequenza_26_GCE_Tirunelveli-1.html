@@ -914,6 +914,14 @@
             }).join("");
         }
 
+        // Auto-initialize event cards & countdown
+        createEventCards();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => { createEventCards(); startCountdown(); });
+        } else {
+            startCountdown();
+        }
+
         function openRulesModal(index) {
             const event = eventData[index];
             if (!event) return;
